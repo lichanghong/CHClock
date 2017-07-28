@@ -4,18 +4,28 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CHClock/CHSpeechSynthesizer.m"
-            timestampString = "522668427.948017"
+            filePath = "CHClock/ViewController.m"
+            timestampString = "522843829.946271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-speechSynthesizer:didPauseSpeechUtterance:"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +35,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CHClock/CHSpeechSynthesizer.m"
-            timestampString = "522668427.948017"
+            filePath = "CHClock/ViewController.m"
+            timestampString = "522844612.230575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-speechSynthesizer:didContinueSpeechUtterance:"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-startTimer"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController startTimer]"
+                  moduleName = "CHClock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lichanghong/Desktop/site/CHClock/CHClock/ViewController.m"
+                  timestampString = "522844690.195969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[ViewController startTimer]_block_invoke"
+                  moduleName = "CHClock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lichanghong/Desktop/site/CHClock/CHClock/ViewController.m"
+                  timestampString = "522844690.19769"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CHClock/CHSpeechSynthesizer.m"
-            timestampString = "522668427.948017"
+            filePath = "CHClock/ViewController.m"
+            timestampString = "522844614.220553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-speechSynthesizer:didCancelSpeechUtterance:"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

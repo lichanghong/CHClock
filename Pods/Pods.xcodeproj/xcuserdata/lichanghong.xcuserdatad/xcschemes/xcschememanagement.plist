@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BAAlertController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CHBaseUtil.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DateTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MagicalRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4301E42DF29B043E3C52DBF1D29A155F</key>
+		<key>1884696B4E655C7B9D28CEB740B0FA1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C40B6B3CF243A4F4C0CBA45547481C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96D028D8410E9A401CDCEFD40406EEC0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E50C54774422A8F8B005E68B94433386</key>
 		<dict>
 			<key>primary</key>
 			<true/>

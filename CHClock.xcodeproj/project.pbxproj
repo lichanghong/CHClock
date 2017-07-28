@@ -20,6 +20,9 @@
 		9593D90B1F27563900DD347C /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9593D90A1F27563900DD347C /* alarm.mp3 */; };
 		9593D90E1F2756DF00DD347C /* CHAlertAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9593D90D1F2756DF00DD347C /* CHAlertAVPlayer.m */; };
 		9593D9101F27579800DD347C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D90F1F27579800DD347C /* MediaPlayer.framework */; };
+		9593D9131F283DF800DD347C /* CHEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9593D9121F283DF800DD347C /* CHEditViewController.m */; };
+		9593D91B1F29BFCA00DD347C /* TimeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9593D9191F29BFCA00DD347C /* TimeModel.xcdatamodeld */; };
+		9593D9231F29C16A00DD347C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D9221F29C16A00DD347C /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,10 @@
 		9593D90C1F2756DF00DD347C /* CHAlertAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAlertAVPlayer.h; sourceTree = "<group>"; };
 		9593D90D1F2756DF00DD347C /* CHAlertAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAlertAVPlayer.m; sourceTree = "<group>"; };
 		9593D90F1F27579800DD347C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9593D9111F283DF800DD347C /* CHEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEditViewController.h; sourceTree = "<group>"; };
+		9593D9121F283DF800DD347C /* CHEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEditViewController.m; sourceTree = "<group>"; };
+		9593D91A1F29BFCA00DD347C /* TimeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeModel.xcdatamodel; sourceTree = "<group>"; };
+		9593D9221F29C16A00DD347C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FE5504ACAB8DD8A05874C4CD /* Pods-CHClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHClock/Pods-CHClock.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9593D9231F29C16A00DD347C /* CoreData.framework in Frameworks */,
 				9593D9101F27579800DD347C /* MediaPlayer.framework in Frameworks */,
 				9593D9091F27497300DD347C /* AVKit.framework in Frameworks */,
 				9593D9041F273F5700DD347C /* AVFoundation.framework in Frameworks */,
@@ -73,6 +81,7 @@
 		5BA07F20D41F077CFE54CFA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9593D9221F29C16A00DD347C /* CoreData.framework */,
 				9593D90F1F27579800DD347C /* MediaPlayer.framework */,
 				9593D9081F27497300DD347C /* AVKit.framework */,
 				9593D9031F273F5700DD347C /* AVFoundation.framework */,
@@ -102,15 +111,14 @@
 		9593D8E81F26F31700DD347C /* CHClock */ = {
 			isa = PBXGroup;
 			children = (
-				9593D90A1F27563900DD347C /* alarm.mp3 */,
+				9593D9151F29BE2600DD347C /* Model */,
+				9593D9141F29BE0200DD347C /* clock */,
 				9593D8EC1F26F31700DD347C /* AppDelegate.h */,
 				9593D8ED1F26F31700DD347C /* AppDelegate.m */,
 				9593D8EF1F26F31700DD347C /* ViewController.h */,
 				9593D8F01F26F31700DD347C /* ViewController.m */,
-				9593D90C1F2756DF00DD347C /* CHAlertAVPlayer.h */,
-				9593D90D1F2756DF00DD347C /* CHAlertAVPlayer.m */,
-				9593D9051F27401300DD347C /* CHSpeechSynthesizer.h */,
-				9593D9061F27401300DD347C /* CHSpeechSynthesizer.m */,
+				9593D9111F283DF800DD347C /* CHEditViewController.h */,
+				9593D9121F283DF800DD347C /* CHEditViewController.m */,
 				9593D8F21F26F31700DD347C /* Main.storyboard */,
 				9593D8F51F26F31700DD347C /* Assets.xcassets */,
 				9593D8F71F26F31700DD347C /* LaunchScreen.storyboard */,
@@ -126,6 +134,26 @@
 				9593D8EA1F26F31700DD347C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9593D9141F29BE0200DD347C /* clock */ = {
+			isa = PBXGroup;
+			children = (
+				9593D90A1F27563900DD347C /* alarm.mp3 */,
+				9593D90C1F2756DF00DD347C /* CHAlertAVPlayer.h */,
+				9593D90D1F2756DF00DD347C /* CHAlertAVPlayer.m */,
+				9593D9051F27401300DD347C /* CHSpeechSynthesizer.h */,
+				9593D9061F27401300DD347C /* CHSpeechSynthesizer.m */,
+			);
+			name = clock;
+			sourceTree = "<group>";
+		};
+		9593D9151F29BE2600DD347C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9593D9191F29BFCA00DD347C /* TimeModel.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9593D8F11F26F31700DD347C /* ViewController.m in Sources */,
+				9593D9131F283DF800DD347C /* CHEditViewController.m in Sources */,
 				9593D8EE1F26F31700DD347C /* AppDelegate.m in Sources */,
 				9593D90E1F2756DF00DD347C /* CHAlertAVPlayer.m in Sources */,
 				9593D8EB1F26F31700DD347C /* main.m in Sources */,
+				9593D91B1F29BFCA00DD347C /* TimeModel.xcdatamodeld in Sources */,
 				9593D9071F27401300DD347C /* CHSpeechSynthesizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +467,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9593D9191F29BFCA00DD347C /* TimeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9593D91A1F29BFCA00DD347C /* TimeModel.xcdatamodel */,
+			);
+			currentVersion = 9593D91A1F29BFCA00DD347C /* TimeModel.xcdatamodel */;
+			path = TimeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9593D8DE1F26F31700DD347C /* Project object */;
 }

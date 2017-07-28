@@ -6,5 +6,7 @@ target 'CHClock' do
 
   # Pods for CHClock
   pod 'DateTools'
- 
+  pod 'BAAlertController'
+  pod 'MagicalRecord', '~> 2.3.2'
+  pod 'CHBaseUtil', '~> 0.0.5'
 end

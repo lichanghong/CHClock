@@ -10,6 +10,9 @@
 #import <DateTools/DateTools.h>
 #import "CHSpeechSynthesizer.h"
 #import "CHAlertAVPlayer.h"
+#import "TimeModel+CoreDataClass.h"
+#import <MagicalRecord/MagicalRecord.h>
+
 
 @interface ViewController ()
 @property (nonatomic,strong)NSTimer *timer;
@@ -19,6 +22,8 @@
 
 @property (nonatomic,strong)CHSpeechSynthesizer *speechSynthesizer;
 @property (nonatomic,strong)CHAlertAVPlayer *alertAVPlayer;
+
+@property (nonatomic,strong)NSArray *dataSource;
 
 @end
 
@@ -95,7 +100,9 @@
 }
 - (NSDate *)deadLineDate
 {
-    return [self futureDateWithHour:8 minute:30];
+    int hour = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"hour_key"];
+    int minute = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"minite_key"];
+    return [self futureDateWithHour:hour minute:minute];
 }
 
 - (NSString *)LeftMinute
@@ -103,6 +110,18 @@
     NSDate *futureDate = [self deadLineDate];
     double second = [futureDate secondsLaterThan:[self currentDate]];
     return [NSString stringWithFormat:@"%0.f",second/60.0];
+}
+
+- (void)makeLessThanParam:(BOOL)can
+{
+    NSArray *times = [TimeModel MR_findAll];
+    int count = (int)[times count];
+    for (int i=0; i<count; i++) {
+        TimeModel *model = [times objectAtIndex:i];
+        NSString *key = [NSString stringWithFormat:@"param_key_%d",model.withinTime];
+        [[NSUserDefaults standardUserDefaults]setBool:can forKey:key];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)startTimer
@@ -113,51 +132,70 @@
     if ([futureDate isLaterThan:currentDate]) {
         if (futureDate.day == currentDate.day) {
             //同一天没超时的情况，定时
-            __block BOOL isLessThan30 = NO;
-            __block BOOL isLessThan10 = NO;
-            __block BOOL isLessThan5 = NO;
-            __block BOOL isLessThan1 = NO;
-
+            [self makeLessThanParam:NO];
+            __block BOOL isLessThan = NO;
             self.timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
                 [self.button setTitle:@"已启动" forState:UIControlStateNormal];
                 //NSLog(@"timer = .....");
                 double second = [futureDate secondsLaterThan:[self currentDate]];
-                if (second<=60 && isLessThan1 == NO) {
+                NSInteger alert_time =  [[NSUserDefaults standardUserDefaults]integerForKey:@"alert_time_key"];
+                
+                if (second<=alert_time*60 && isLessThan == NO) {
                     //alert sos
                     NSLog(@"1分钟内，警报");
-                    isLessThan1 = YES;
                     [self endAlertTimer];
                     [self startSOS];
+                    isLessThan = YES;
                 }
-                else if (second<=300 && isLessThan5 == NO) {
-                    NSLog(@"5分钟内，每分钟提醒一次");
-                    isLessThan5 = YES;
-                    [self endAlertTimer];
-                    [self startAlertTimerWithInterval:60];
+                //排序
+                NSArray *times = [TimeModel MR_findAll];
+                self.dataSource = [times sortedArrayUsingComparator:^NSComparisonResult(TimeModel *obj1, TimeModel *obj2) {
+                    if (obj1.withinTime>obj2.withinTime) {
+                        return NSOrderedAscending;
+                    }
+                    return NSOrderedDescending;
+                }];
+                
+                
+                {
+                    int count = [[TimeModel MR_numberOfEntities] intValue];
+                    
+                    //找最小
+                    NSMutableArray *marr = [NSMutableArray array];
+                    
+                    for (int i=0; i<count; i++) {
+                        TimeModel *model = [self.dataSource objectAtIndex:i];
+                        if (second<=model.withinTime*60) {
+                            [marr addObject:model];
+                        }
+                    }
+                    [marr sortUsingComparator:^NSComparisonResult(TimeModel *obj1,TimeModel *obj2) {
+                        return obj1.withinTime>obj2.withinTime?NSOrderedAscending:NSOrderedDescending;
+                    }];
+                   TimeModel* minTimeModel = [marr lastObject];
+                    
+                    NSString *key = [NSString stringWithFormat:@"param_key_%d",minTimeModel.withinTime];
+                    if ([[NSUserDefaults standardUserDefaults]boolForKey:key] == NO) {
+                        [self endAlertTimer];
+                        [self startAlertTimerWithInterval:minTimeModel.intervalTime*60];
+                        NSString *key = [NSString stringWithFormat:@"param_key_%d",minTimeModel.withinTime];
+                        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:key];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    }
+                    
+                   // NSLog(@"min=%d inter=%d",minTimeModel.withinTime,minTimeModel.intervalTime);
                 }
-                else if (second<=600 && isLessThan10 == NO) {
-                    NSLog(@"10分钟内，每2分钟提醒一次");
-                    isLessThan10 = YES;
-                    [self endAlertTimer];
-                    [self startAlertTimerWithInterval:2*60];
-                }
-                else if (second<=60*30 && isLessThan30 == NO) {
-                    NSLog(@"30分钟内，每5分钟提醒一次");
-                    isLessThan30 = YES;
-                    [self endAlertTimer];
-                    [self startAlertTimerWithInterval:5*60];
-                }
-                NSLog(@"%f....",second);
-             
+                
             }];
             [self.timer fire];
-
+            [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
         }
         else NSLog(@"day is not equal");
     }
     else NSLog(@"future date is not later than current");
 }
 
+ 
 - (void)startSOS
 {
     [self.alertAVPlayer startAlarm];

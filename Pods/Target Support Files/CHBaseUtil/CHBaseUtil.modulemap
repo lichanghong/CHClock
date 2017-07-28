@@ -1,0 +1,6 @@
+framework module CHBaseUtil {
+  umbrella header "CHBaseUtil-umbrella.h"
+
+  export *
+  module * { export * }
+}
