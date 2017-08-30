@@ -63,14 +63,16 @@
             [self.button setTitle:@"未启动" forState:UIControlStateNormal];
             [self endSOS];
             [self endAlertTimer];
-            
+            [UIApplication sharedApplication].idleTimerDisabled = NO;
+
             NSLog(@"timer is valid, invalidate it");
         }
         else
         {
             NSLog(@"timer is invalidate，startTimer");
             [self startTimer];
-            
+            [UIApplication sharedApplication].idleTimerDisabled = YES;
+
         }
 
     }

@@ -22,7 +22,6 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"TimeDB.sqlite"];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    
     if ([[NSUserDefaults standardUserDefaults] integerForKey:@"hour_key"] == 0) {
         [[NSUserDefaults standardUserDefaults]setInteger:9 forKey:@"hour_key"];
         [[NSUserDefaults standardUserDefaults]setInteger:0 forKey:@"minite_key"];
