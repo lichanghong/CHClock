@@ -23,6 +23,8 @@
 		9593D9131F283DF800DD347C /* CHEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9593D9121F283DF800DD347C /* CHEditViewController.m */; };
 		9593D91B1F29BFCA00DD347C /* TimeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9593D9191F29BFCA00DD347C /* TimeModel.xcdatamodeld */; };
 		9593D9231F29C16A00DD347C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9593D9221F29C16A00DD347C /* CoreData.framework */; };
+		95CA8CFC1F67858C0060BA45 /* BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CA8CFB1F67858C0060BA45 /* BackgroundTask.m */; };
+		95CA8CFE1F6785DD0060BA45 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95CA8CFD1F6785DD0060BA45 /* silence.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,9 @@
 		9593D9121F283DF800DD347C /* CHEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEditViewController.m; sourceTree = "<group>"; };
 		9593D91A1F29BFCA00DD347C /* TimeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeModel.xcdatamodel; sourceTree = "<group>"; };
 		9593D9221F29C16A00DD347C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		95CA8CFA1F67858C0060BA45 /* BackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundTask.h; sourceTree = "<group>"; };
+		95CA8CFB1F67858C0060BA45 /* BackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTask.m; sourceTree = "<group>"; };
+		95CA8CFD1F6785DD0060BA45 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
 		FE5504ACAB8DD8A05874C4CD /* Pods-CHClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHClock/Pods-CHClock.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +144,8 @@
 		9593D9141F29BE0200DD347C /* clock */ = {
 			isa = PBXGroup;
 			children = (
+				95CA8CFA1F67858C0060BA45 /* BackgroundTask.h */,
+				95CA8CFB1F67858C0060BA45 /* BackgroundTask.m */,
 				9593D90A1F27563900DD347C /* alarm.mp3 */,
 				9593D90C1F2756DF00DD347C /* CHAlertAVPlayer.h */,
 				9593D90D1F2756DF00DD347C /* CHAlertAVPlayer.m */,
@@ -151,6 +158,7 @@
 		9593D9151F29BE2600DD347C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95CA8CFD1F6785DD0060BA45 /* silence.mp3 */,
 				9593D9191F29BFCA00DD347C /* TimeModel.xcdatamodeld */,
 			);
 			name = Model;
@@ -224,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CA8CFE1F6785DD0060BA45 /* silence.mp3 in Resources */,
 				9593D90B1F27563900DD347C /* alarm.mp3 in Resources */,
 				9593D8F91F26F31700DD347C /* LaunchScreen.storyboard in Resources */,
 				9593D8F61F26F31700DD347C /* Assets.xcassets in Resources */,
@@ -292,6 +301,7 @@
 				9593D90E1F2756DF00DD347C /* CHAlertAVPlayer.m in Sources */,
 				9593D8EB1F26F31700DD347C /* main.m in Sources */,
 				9593D91B1F29BFCA00DD347C /* TimeModel.xcdatamodeld in Sources */,
+				95CA8CFC1F67858C0060BA45 /* BackgroundTask.m in Sources */,
 				9593D9071F27401300DD347C /* CHSpeechSynthesizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

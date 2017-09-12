@@ -12,7 +12,7 @@
 #import "CHAlertAVPlayer.h"
 #import "TimeModel+CoreDataClass.h"
 #import <MagicalRecord/MagicalRecord.h>
-
+#import "BackgroundTask.h"
 
 @interface ViewController ()
 @property (nonatomic,strong)NSTimer *timer;
@@ -39,6 +39,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+ 
 - (CHSpeechSynthesizer *)speechSynthesizer
 {
     if (!_speechSynthesizer) {
@@ -64,13 +65,14 @@
             [self endSOS];
             [self endAlertTimer];
             [UIApplication sharedApplication].idleTimerDisabled = NO;
-
+            [BackgroundTask stopAudioTask];
             NSLog(@"timer is valid, invalidate it");
         }
         else
         {
             NSLog(@"timer is invalidate，startTimer");
             [self startTimer];
+            [BackgroundTask startAudioTasks];
             [UIApplication sharedApplication].idleTimerDisabled = YES;
 
         }

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <AVFoundation/AVFoundation.h>
+#import "BackgroundTask.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface AppDelegate ()
 
@@ -28,8 +30,7 @@
         [[NSUserDefaults standardUserDefaults]setInteger:1 forKey:@"alert_time_key"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-   
-  
+    
     return YES;
 }
 

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CHClock/ViewController.m"
-            timestampString = "525781790.4478"
+            timestampString = "526880039.83089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CHClock/ViewController.m"
-            timestampString = "525781790.4478"
+            timestampString = "526880039.83089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-startTimer"
             landmarkType = "7">
             <Locations>
@@ -52,11 +52,11 @@
                   moduleName = "CHClock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lichanghong/Desktop/site/CHClock/CHClock/ViewController.m"
-                  timestampString = "522844690.195969"
+                  timestampString = "526881343.763065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
                   offsetFromSymbolStart = "252">
                </Location>
                <Location
@@ -67,11 +67,11 @@
                   moduleName = "CHClock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lichanghong/Desktop/site/CHClock/CHClock/ViewController.m"
-                  timestampString = "522844690.19769"
+                  timestampString = "526881343.764728"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CHClock/ViewController.m"
-            timestampString = "525781790.4478"
+            timestampString = "526880039.83089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
